@@ -10,15 +10,17 @@ const country = {
 };
 
 describe('Country routes', () => {
-  before(() => conn.authenticate()
-  .catch((err) => {
+  before(() => conn.authenticate().catch((err) => {
     console.error('Unable to connect to the database:', err);
   }));
+
   beforeEach(() => Country.sync({ force: true })
     .then(() => Country.create(pokemon)));
+  
   describe('GET /countries', () => {
-    it('should get 200', () =>
-      agent.get('/countries').expect(200)
-    );
+    it('should get 200', () => agent.get('/countries').expect(200));
+  });
+  describe("GET /countries/:idPais", ()=> {
+    it("should get 200", () => agent.get(`/countries/${country.id}`).expect(200));
   });
 });
