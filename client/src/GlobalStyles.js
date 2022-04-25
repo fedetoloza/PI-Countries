@@ -20,14 +20,14 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 html, body{
-    background-image: url(${background});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    
+  background-image: url(${background});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  
 
-    font-family: 'Roboto', 'Oxygen','Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', 'Oxygen','Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
 `;
