@@ -10,13 +10,13 @@ import {
   Container,
   Content,
   Info,
-  Activities,
+  DetailActivities,
   ActDiv,
   BackBtn,
   TopDetail,
-} from "../styles/CardDetail";
+} from "../styles/Detail";
 
-export default function Detail() {
+export default function Detail () {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { country } = useSelector((state) => state);
@@ -33,8 +33,8 @@ export default function Detail() {
 
   return (
     <Container>
-      {loader ? (
-        <Loader />
+      {loader? (
+      <Loader />
       ) : (
         country?.name && (
           <div>
@@ -53,7 +53,8 @@ export default function Detail() {
                 <h1>Country Details</h1>
                 <hr />
                 <div>
-                  <span>Continent</span> {country.continent}
+                  <span>Continent</span> 
+                  {country.continent}
                 </div>
                 <div>
                   <span>Capital</span>
@@ -72,7 +73,7 @@ export default function Detail() {
                   {country.population?.toLocaleString()}
                 </div>
               </Info>
-              <Activities>
+              <DetailActivities>
                 <h1>Activities</h1>
                 <hr />
                 <ActDiv>
@@ -91,7 +92,7 @@ export default function Detail() {
                     <h3>No activities available</h3>
                   )}
                 </ActDiv>
-              </Activities>
+              </DetailActivities>
             </Content>
           </div>
         )
