@@ -19,14 +19,13 @@ export default function Home() {
   const [loader, setLoader] = useState(true);
   const [filters, setFilters] = useState(false);
   const [ ,setOrder ] = useState();
-  
-  let countriesPerPage = 10;
+  //constantes para paginado
+  const countriesPerPage = 10;
   const indexLastCountry = page * countriesPerPage - 1; 
   const indexFirstCountry =
     page === 1
       ? indexLastCountry - (countriesPerPage - 1)
       : indexLastCountry - countriesPerPage; 
-  
   const currentCountries = countries.slice(
     indexFirstCountry,
     indexLastCountry
@@ -91,8 +90,10 @@ export default function Home() {
           handleFilterActivity={handleFilterActivity}
           />
           )}
-      </Btns>      
+      </Btns>    
+
       <Paged countriesPerPage={countriesPerPage} />
+      
       <Countries>
         {loader ? (
           <Loader />

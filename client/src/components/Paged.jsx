@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentPage } from "../redux/actions/index.js";
-import { ContainerPage } from "../styles/Paged";
+import { ContainerPage, PrevNext, ContPag, NextBtn, BckBtn, FstPageBtn, LstPageBtn } from "../styles/Paged";
+
 
 
 export default function Paged({ countriesPerPage }) {
   const dispatch = useDispatch();
-  const { countries } = useSelector((state) => state);
+  const { countries, page } = useSelector((state) => state);
 
   const pageCountries = [];
   // Método actualizador del estado global de la página
@@ -19,13 +20,30 @@ export default function Paged({ countriesPerPage }) {
   }
 
   return (
+    <div>
+      
+      {pageCountries.length > 0 && (
+        <PrevNext>
+          <ContPag>
+          <FstPageBtn onClick={() => changePage(1)} disabled={page === 1}>FIRST</FstPageBtn>
+          <BckBtn onClick={() => changePage(page - 1)} disabled={page === 1}>BACK</BckBtn>
+          <span>
+            Página {page} de {pageCountries.length}
+          </span>
+          <NextBtn onClick={() => changePage(page + 1)} disabled={page >= pageCountries.length}>NEXT</NextBtn>
+          <LstPageBtn onClick={() => changePage(pageCountries.length)} disabled={page >= pageCountries.length}>LAST</LstPageBtn>
+          </ContPag>
+        </PrevNext>
+      )}
+      
       <ContainerPage>
         {pageCountries?.map((page) => (
         <span onClick={() => changePage(page)} key={page}>
           {page}
         </span>
       ))}
-    </ContainerPage>
+      </ContainerPage>
+    </div>
   );
 }
 

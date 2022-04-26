@@ -12,7 +12,6 @@ export const Search = styled.form`
   height: 2.5rem;
   border-radius: 0.75rem;
   width: 100%;
-
   input {
     background-color: rgba(255, 255, 255, 0.25);
     align-items: center;

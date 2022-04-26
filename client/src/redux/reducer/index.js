@@ -39,13 +39,15 @@ function rootReducer(state = initialState, action) {
       const continentFilter =
         action.payload === "All"? allCountries : allCountries.filter((country) => country.continent === action.payload);
       return { ...state, countries: continentFilter };
+    
     case FILTER_BY_ACTIVITY:
       const allCountriesActivity = state.allCountries;
       const activityFilter = action.payload === "All"
           ? allCountriesActivity.filter((country) => country.activities.length > 0)
           : allCountriesActivity.filter((country) => country.activities && country.activities.map((act) => act.name).includes(action.payload));
       return { ...state, countries: activityFilter};
-    case ORDER_COUNTRIES:
+    
+      case ORDER_COUNTRIES:
       let ordered = state.countries;
       action.payload === "Asc" && ordered.sort((a, b) => {
           return a.name.localeCompare(b.name);

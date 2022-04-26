@@ -18,6 +18,7 @@ export const BtnForm = styled(Button)`
 export const Country = styled.div`
   margin: 0.5rem 0;
   font-size: 1rem;
+  text-color: black;
   background: rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(10px);
   padding: 0.5rem;

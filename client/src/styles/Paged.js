@@ -31,11 +31,11 @@ export const ContainerPage = styled.div`
     span:hover {
       background-color: #ff8906;
       color: #fff;
+      
     }
+    
   }
 `;
-
-
 
 export const PrevNext = styled.div`
   display: flex;
@@ -43,12 +43,12 @@ export const PrevNext = styled.div`
   align-items: center;
   margin: 1rem auto;
   width:80%;
-  background-color: rgba(17, 25, 40, 0.75);
+  background-color: rgba(17, 25, 40, 0.25);
   padding: 0.4rem;
   border-radius: 1rem;
   span {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-color);
     width: 100%;
@@ -59,30 +59,101 @@ export const PrevNext = styled.div`
 `;
 export const ContPag = styled.div`
   display: flex;
-
+  flex-direction: row;
 `;
 
 export const BtnPaged = styled.button`
-  backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
-  color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  border-radius: 0.4rem;
-  margin: 0.2rem;
-  min-width: 2rem;
-  padding: 0 0.3rem;
-  height: 2rem;
-  border-style: hidden;
+  border-style: none;
   cursor: pointer;
-
   :hover {
     background-color: #ff8906;
     color: #fff;
   }
+  :disabled {
+    background-color: #ffb35c;
+  }
+`;
 
+export const PagedBtns = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+
+export const NextBtn = styled.button`
+  background-color: black;
+  color: var(--text-color);
+  border-color:rgba(255, 255, 255, 0)
+  border-style: transparent;
+  border-radius: 0.4rem;
+  padding: 0.1rem;
+  display: block;
+  width: 45px;
+  height: 45px;
+  :hover {
+    background-color: #ff8906;
+    color: #fff;
+  }
+  :disabled {
+    background-color: #ffb35c;
+  }
+`;
+
+export const BckBtn = styled.button`
+  background-color: black;
+  color: var(--text-color);
+  border-color:rgba(255, 255, 255, 0)
+  border-style: transparent;
+  border-radius: 0.4rem;
+  padding: 0.2rem;
+  display: block;
+  width: 45px;
+  height: 45px;
+  :hover {
+    background-color: #ff8906;
+    color: #fff;
+  }
+  :disabled {
+    background-color: #ffb35c;
+  }
+`;
+
+export const FstPageBtn = styled.button`
+  background-color: black;
+  color: var(--text-color);
+  border-color:rgba(255, 255, 255, 0)
+  border-style: transparent;
+  border-radius: 0.4rem;
+  padding: 0.1rem;
+  display: block;
+  width: 45px;
+  height: 45px;
+  :hover {
+    background-color: #ff8906;
+    color: #fff;
+  }
+  :disabled {
+    background-color: #ffb35c;
+  }
+`;
+
+export const LstPageBtn = styled.button`
+  background-color: black;
+  color: var(--text-color);
+  border-color:rgba(255, 255, 255, 0)
+  border-style: transparent;
+  border-radius: 0.4rem;
+  padding: 0.1rem;
+  display: block;
+  width: 45px;
+  height: 45px;
+  :hover {
+    background-color: #ff8906;
+    color: #fff;
+  }
   :disabled {
     background-color: #ffb35c;
   }

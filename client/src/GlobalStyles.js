@@ -25,8 +25,6 @@ html, body{
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  
-
   font-family: 'Roboto', 'Oxygen','Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
 }
