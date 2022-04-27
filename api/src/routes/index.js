@@ -25,4 +25,5 @@ router.get("/countries/:id", getCountriesById);
 router.get("/activities", getActivitiesByName);
 router.post("/activity", postActivity);
 
+
 module.exports = router;

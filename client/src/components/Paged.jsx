@@ -34,8 +34,7 @@ export default function Paged({ countriesPerPage }) {
           <LstPageBtn onClick={() => changePage(pageCountries.length)} disabled={page >= pageCountries.length}>LAST</LstPageBtn>
           </ContPag>
         </PrevNext>
-      )}
-      
+      )}      
       <ContainerPage>
         {pageCountries?.map((page) => (
         <span onClick={() => changePage(page)} key={page}>
